@@ -1,7 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Larry House</Authors>
+    <Description>Library to simplify the binding of classes to configuration sections in .Net Core applications</Description>
+    <Copyright>© Copyright 2020 Larry House</Copyright>
+    <PackageProjectUrl>https://github.com/DotNet-Ninja/DotNetNinja.AutoBoundConfiguration</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DotNet-Ninja/DotNetNinja.AutoBoundConfiguration</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
