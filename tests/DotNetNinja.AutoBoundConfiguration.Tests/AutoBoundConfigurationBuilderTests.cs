@@ -110,6 +110,36 @@ namespace DotNetNinja.AutoBoundConfiguration.Tests
         }
 
         [Fact]
+        public void For_ShouldBindInstanceOfTypeToProvidedConfigurationData()
+        {
+            var type = typeof(SampleSettings);
+            _mockRepository.Provide<IConfiguration>(TestConfigurationSource.Default);
+            _mockRepository.Provide<IServiceCollection>(new ServiceCollection());
+            var builder = _mockRepository.Create<AutoBoundConfigurationBuilder>();
+
+            builder.For(type);
+
+            var settings = builder.Provider.Get<SampleSettings>();
+            Assert.Equal("String", settings.StringSetting);
+            Assert.Equal(1234, settings.IntegerSetting);
+        }
+
+        [Fact]
+        public void For_WhenSectionNotSpecified_ShouldBindInstanceOfTypeToExpectedConfigurationData()
+        {
+            var type = typeof(AutoSampleSettings);
+            _mockRepository.Provide<IConfiguration>(TestConfigurationSource.AutoSectionFinding);
+            _mockRepository.Provide<IServiceCollection>(new ServiceCollection());
+            var builder = _mockRepository.Create<AutoBoundConfigurationBuilder>();
+
+            builder.For(type);
+
+            var settings = builder.Provider.Get<AutoSampleSettings>();
+            Assert.Equal("AutoString", settings.StringSetting);
+            Assert.Equal(1234, settings.IntegerSetting);
+        }
+
+        [Fact]
         public void ForT_WithTypeWithoutAutoBindAttribute_ShouldThrowInvalidOperationException()
         {
             var builder = _mockRepository.Create<AutoBoundConfigurationBuilder>();
@@ -143,6 +173,34 @@ namespace DotNetNinja.AutoBoundConfiguration.Tests
 
             Assert.Contains(builder.Services, service => service.Lifetime == ServiceLifetime.Singleton 
                                                          && service.ServiceType == typeof(SampleSettings));
+        }
+
+        [Fact]
+        public void ForT_ShouldBindInstanceOfTypeToProvidedConfigurationData()
+        {
+            _mockRepository.Provide<IConfiguration>(TestConfigurationSource.Default);
+            _mockRepository.Provide<IServiceCollection>(new ServiceCollection());
+            var builder = _mockRepository.Create<AutoBoundConfigurationBuilder>();
+
+            builder.For<SampleSettings>();
+
+            var settings = builder.Provider.Get<SampleSettings>();
+            Assert.Equal("String", settings.StringSetting);
+            Assert.Equal(1234, settings.IntegerSetting);
+        }
+        
+        [Fact]
+        public void ForT_WhenSectionNotSpecified_ShouldBindInstanceOfTypeToExpectedConfigurationData()
+        {
+            _mockRepository.Provide<IConfiguration>(TestConfigurationSource.AutoSectionFinding);
+            _mockRepository.Provide<IServiceCollection>(new ServiceCollection());
+            var builder = _mockRepository.Create<AutoBoundConfigurationBuilder>();
+
+            builder.For<AutoSampleSettings>();
+
+            var settings = builder.Provider.Get<AutoSampleSettings>();
+            Assert.Equal("AutoString", settings.StringSetting);
+            Assert.Equal(1234, settings.IntegerSetting);
         }
 
         [Fact]

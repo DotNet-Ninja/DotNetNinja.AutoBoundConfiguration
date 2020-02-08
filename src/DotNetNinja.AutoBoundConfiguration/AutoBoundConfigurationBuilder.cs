@@ -64,8 +64,9 @@ namespace DotNetNinja.AutoBoundConfiguration
             {
                 throw new InvalidOperationException($"Type '{t.Name}' cannot be used with AutoBoundConfiguration because it does not have a AutoBind attribute.");
             }
+            var section = attribute.Section ?? t.Name;
             var instance = Convert.ChangeType(Activator.CreateInstance(t), t);
-            Configuration.Bind(attribute.Section, instance);
+            Configuration.Bind(section, instance);
             _provider.Add(t, instance);
             Services.AddSingleton(t, instance);
             return this;
