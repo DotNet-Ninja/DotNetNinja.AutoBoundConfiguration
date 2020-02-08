@@ -2,10 +2,21 @@
 @{
     ViewData["Title"] = "Home Page";
     var settings = ViewData["Settings"] as SampleSettings;
+    var links = (ViewData["Links"] as LinkSettings) ?? new LinkSettings();
 }
 
 <div>
     <h1 class="text-4">Sample Settings</h1>
     <p>String Setting: @settings.StringSetting</p>
     <p>Integer Setting: @settings.IntegerSetting</p>
+</div>
+<div>
+    <h1 class="text-4">Links</h1>
+    <ul>
+        @foreach (var link in links.Items)
+        {
+        <li><a href="@link.Url" target="_blank">@link.Name</a></li>
+        }
+    </ul>
+
 </div>
