@@ -1,0 +1,11 @@
+﻿@using SampleApplication.Configuration;
+@{
+    ViewData["Title"] = "Home Page";
+    var settings = ViewData["Settings"] as SampleSettings;
+}
+
+<div>
+    <h1 class="text-4">Sample Settings</h1>
+    <p>String Setting: @settings.StringSetting</p>
+    <p>Integer Setting: @settings.IntegerSetting</p>
+</div>
