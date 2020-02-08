@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DotNetNinja.AutoBoundConfiguration;
-using SampleApplication.Configuration;
 
 namespace SampleApplication
 {
@@ -24,9 +23,7 @@ namespace SampleApplication
                 .AddAutoBoundConfigurations(Configuration)  // Initalizes an AutoBoundConfigurationsBuilder
                     .FromAssembly(typeof(Program).Assembly) // Adds all the types with an AutoBind attribute in the given assembly and sets up in DI Container
                     //.For<SampleSettings>()  // You can add individual types manually if needed (Will throw exception in this case because it is already registered!)
-                    .GetProvider(out var provider)  // You can grab an instance of a provider to capture settings objects if needed in Configure services
-                    .GetConfiguration<SampleSettings>(out var settings) // You can grab a settings object individually if needed in Configure services
-                .Services // Continue adding your other services using the Services object
+                    .Services // Continue adding your other services using the Services object
                 .AddControllersWithViews();
         }
 

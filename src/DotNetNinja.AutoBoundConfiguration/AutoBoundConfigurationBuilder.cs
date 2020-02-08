@@ -15,56 +15,37 @@ namespace DotNetNinja.AutoBoundConfiguration
             Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _provider = new AutoBoundConfigurationProvider();
         }
-
-        private AutoBoundConfigurationProvider _provider;
+        
+        private readonly AutoBoundConfigurationProvider _provider;
 
         public IServiceCollection Services { get; }
 
         protected IConfiguration Configuration { get; }
 
-        public IAutoBoundConfigurationProvider Provider
-        {
-            get
-            {
-                return _provider;
-            }
-        }
-
-        public AutoBoundConfigurationBuilder GetProvider(out IAutoBoundConfigurationProvider provider)
-        {
-            provider = Provider;
-            return this;
-        }
-
-        public AutoBoundConfigurationBuilder GetConfiguration<TConfiguration>(out TConfiguration configuration) 
-            where TConfiguration: class, new()
-        {
-            configuration = Provider.Get<TConfiguration>();
-            return this;
-        }
+        public IAutoBoundConfigurationProvider Provider => _provider;
 
         public AutoBoundConfigurationBuilder FromAssembly(Assembly assembly)
         {
+            AddFromAssembly(assembly);
+            return this;
+        }
+
+        private void AddFromAssembly(Assembly assembly)
+        {
             var types = assembly.GetTypes().Where(type => type.GetCustomAttribute<AutoBindAttribute>() != null && type.IsPublic);
-            foreach(var type in types)
+            foreach (var type in types)
             {
                 For(type);
             }
-            return this;
         }
 
         public AutoBoundConfigurationBuilder FromAssemblies(IEnumerable<Assembly> assemblies)
         {
             foreach(var assembly in assemblies)
             {
-                FromAssembly(assembly);
+                AddFromAssembly(assembly);
             }
             return this;
-        }
-
-        public AutoBoundConfigurationBuilder FromAssemblies(params Assembly[] assemblies)
-        {
-            return FromAssemblies(assemblies);
         }
 
         public AutoBoundConfigurationBuilder For<T>() where T: class, new()
@@ -76,14 +57,14 @@ namespace DotNetNinja.AutoBoundConfiguration
         {
             if(t.GetConstructor(Type.EmptyTypes) == null)
             {
-                throw new InvalidOperationException($"Type '{t.Name}' cannot be used with AutoBoundConfiguration because it does not have a parameterless constructor. ");
+                throw new InvalidOperationException($"Type '{t.Name}' cannot be used with AutoBoundConfiguration because it does not have a parameter-less constructor.");
             }
             var attribute = t.GetCustomAttribute<AutoBindAttribute>();
             if (attribute == null)
             {
                 throw new InvalidOperationException($"Type '{t.Name}' cannot be used with AutoBoundConfiguration because it does not have a AutoBind attribute.");
             }
-            var instance = Activator.CreateInstance(t);
+            var instance = Convert.ChangeType(Activator.CreateInstance(t), t);
             Configuration.Bind(attribute.Section, instance);
             _provider.Add(t, instance);
             Services.AddSingleton(t, instance);

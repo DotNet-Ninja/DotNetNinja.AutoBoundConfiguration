@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly\DotNetNinja.AutoBoundConfiguration.TestAssembly.csproj", "{A0969689-BE22-4EC2-987E-3BEE342E41C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly2", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly2\DotNetNinja.AutoBoundConfiguration.TestAssembly2.csproj", "{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,10 +64,23 @@ Global
 		{A0969689-BE22-4EC2-987E-3BEE342E41C3}.Release|x64.Build.0 = Release|Any CPU
 		{A0969689-BE22-4EC2-987E-3BEE342E41C3}.Release|x86.ActiveCfg = Release|Any CPU
 		{A0969689-BE22-4EC2-987E-3BEE342E41C3}.Release|x86.Build.0 = Release|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Debug|x64.Build.0 = Debug|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Debug|x86.Build.0 = Debug|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Release|x64.Build.0 = Release|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Release|x86.ActiveCfg = Release|Any CPU
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{77137298-5816-479F-87E7-E677916AA7E5} = {919AE829-7558-4063-8676-19EE48FAB40D}
 		{E659BABD-D375-426A-8BF6-AB79CC84E764} = {DD221DAF-2BFF-4196-A09F-01AD964E25EC}
 		{A0969689-BE22-4EC2-987E-3BEE342E41C3} = {DD221DAF-2BFF-4196-A09F-01AD964E25EC}
+		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25} = {DD221DAF-2BFF-4196-A09F-01AD964E25EC}
 	EndGlobalSection
 EndGlobal

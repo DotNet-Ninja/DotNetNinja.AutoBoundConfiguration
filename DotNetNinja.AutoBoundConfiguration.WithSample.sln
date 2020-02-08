@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly\DotNetNinja.AutoBoundConfiguration.TestAssembly.csproj", "{DF55F835-B28C-4098-B74B-0228C1836268}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly2", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly2\DotNetNinja.AutoBoundConfiguration.TestAssembly2.csproj", "{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,11 +78,24 @@ Global
 		{DF55F835-B28C-4098-B74B-0228C1836268}.Release|x64.Build.0 = Release|Any CPU
 		{DF55F835-B28C-4098-B74B-0228C1836268}.Release|x86.ActiveCfg = Release|Any CPU
 		{DF55F835-B28C-4098-B74B-0228C1836268}.Release|x86.Build.0 = Release|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Debug|x64.Build.0 = Debug|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Debug|x86.Build.0 = Debug|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Release|x64.ActiveCfg = Release|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Release|x64.Build.0 = Release|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Release|x86.ActiveCfg = Release|Any CPU
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2E4CA2CF-5E5B-4D9D-8885-74B215D85806} = {02309305-FBAA-4B6B-BF41-2964C48AE14B}
 		{1DFE23CB-20B5-47C6-B8B2-1FBF1B5F58D1} = {02309305-FBAA-4B6B-BF41-2964C48AE14B}
 		{5EF1AEC9-42DE-489E-9836-982C10807698} = {2FF85602-5E9E-4041-B6EF-268CCF5DC555}
 		{DF55F835-B28C-4098-B74B-0228C1836268} = {2FF85602-5E9E-4041-B6EF-268CCF5DC555}
+		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6} = {2FF85602-5E9E-4041-B6EF-268CCF5DC555}
 	EndGlobalSection
 EndGlobal
