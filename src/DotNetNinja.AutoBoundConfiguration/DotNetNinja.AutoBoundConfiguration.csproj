@@ -10,9 +10,11 @@
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
-    <Version>1.0.2</Version>
+    <Version>1.1.0</Version>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageIconUrl />
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
