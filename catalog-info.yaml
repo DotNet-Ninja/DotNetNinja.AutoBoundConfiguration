@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: DotNetNinja.AutoBoundConfiguration
+  annotations:
+    github.com/project-slug: DotNet-Ninja/DotNetNinja.AutoBoundConfiguration
+spec:
+  type: other
+  lifecycle: unknown
+  owner: dotnet-ninja
