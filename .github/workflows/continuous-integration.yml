@@ -2,7 +2,7 @@ name: Continuous Integration
 on:
   workflow_run:
     workflows:
-      - Bump Sematic Version
+      - Bump Semantic Version
     types:
       - completed
 
