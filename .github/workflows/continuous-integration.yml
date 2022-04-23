@@ -1,0 +1,26 @@
+name: Continuous Integration
+on:
+  workflow_run:
+    workflows:
+      - Bump Sematic Version
+    types:
+      - completed
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 3.1.x
+    - name: Restore dependencies
+      run: dotnet restore ./DotNetNinja.AutoBoundConfiguration.sln
+    - name: Build
+      run: dotnet build ./DotNetNinja.AutoBoundConfiguration.sln -c Release --no-restore
+    - name: Test
+      run: dotnet test ./DotNetNinja.AutoBoundConfiguration.sln -c Release --no-build --verbosity normal
