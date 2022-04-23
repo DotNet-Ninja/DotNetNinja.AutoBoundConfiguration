@@ -1,0 +1,144 @@
+SF:C:\Code\DotNetNinja.AutoBoundConfiguration\src\DotNetNinja.AutoBoundConfiguration\AutoBindAttribute.cs
+FN:15,System.String DotNetNinja.AutoBoundConfiguration.AutoBindAttribute::get_Section()
+FNDA:51,System.String DotNetNinja.AutoBoundConfiguration.AutoBindAttribute::get_Section()
+DA:16,51
+FN:6,System.Void DotNetNinja.AutoBoundConfiguration.AutoBindAttribute::.ctor()
+FNDA:11,System.Void DotNetNinja.AutoBoundConfiguration.AutoBindAttribute::.ctor()
+DA:7,11
+DA:9,11
+FN:10,System.Void DotNetNinja.AutoBoundConfiguration.AutoBindAttribute::.ctor(System.String)
+FNDA:27,System.Void DotNetNinja.AutoBoundConfiguration.AutoBindAttribute::.ctor(System.String)
+DA:11,27
+DA:13,27
+DA:14,27
+LF:6
+LH:6
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:C:\Code\DotNetNinja.AutoBoundConfiguration\src\DotNetNinja.AutoBoundConfiguration\AutoBoundConfigurationBuilder.cs
+FN:20,Microsoft.Extensions.DependencyInjection.IServiceCollection DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::get_Services()
+FNDA:31,Microsoft.Extensions.DependencyInjection.IServiceCollection DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::get_Services()
+DA:21,31
+FN:22,Microsoft.Extensions.Configuration.IConfiguration DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::get_Configuration()
+FNDA:22,Microsoft.Extensions.Configuration.IConfiguration DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::get_Configuration()
+DA:23,22
+FN:24,DotNetNinja.AutoBoundConfiguration.IAutoBoundConfigurationProvider DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::get_Provider()
+FNDA:12,DotNetNinja.AutoBoundConfiguration.IAutoBoundConfigurationProvider DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::get_Provider()
+DA:25,12
+FN:28,DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::FromAssembly(System.Reflection.Assembly)
+FNDA:2,DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::FromAssembly(System.Reflection.Assembly)
+DA:29,2
+DA:30,2
+FN:34,System.Void DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::AddFromAssembly(System.Reflection.Assembly)
+FNDA:34,System.Void DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::AddFromAssembly(System.Reflection.Assembly)
+DA:35,34
+DA:36,40
+DA:38,14
+DA:40,6
+BRDA:36,71,1,14
+BRDA:36,71,0,6
+BRDA:35,6,0,14
+BRDA:35,6,1,14
+FN:43,DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::FromAssemblies(System.Collections.Generic.IEnumerable`1<System.Reflection.Assembly>)
+FNDA:12,DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::FromAssemblies(System.Collections.Generic.IEnumerable`1<System.Reflection.Assembly>)
+DA:44,12
+DA:46,4
+DA:48,2
+BRDA:44,29,1,4
+BRDA:44,29,0,2
+FN:52,DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::For()
+FNDA:5,DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::For()
+DA:53,5
+FN:57,DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::For(System.Type)
+FNDA:25,DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::For(System.Type)
+DA:58,25
+DA:60,1
+DA:62,24
+DA:63,24
+DA:65,2
+DA:67,22
+DA:68,22
+DA:69,22
+DA:70,22
+DA:71,22
+DA:72,22
+BRDA:58,17,0,1
+BRDA:58,17,1,24
+BRDA:63,53,0,2
+BRDA:63,53,1,22
+BRDA:67,88,0,6
+BRDA:67,88,1,22
+FN:11,System.Void DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::.ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+FNDA:21,System.Void DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder::.ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+DA:12,21
+DA:14,21
+DA:15,20
+DA:16,19
+DA:17,19
+BRDA:14,9,0,1
+BRDA:14,9,1,20
+BRDA:15,31,0,1
+BRDA:15,31,1,19
+LF:29
+LH:29
+BRF:16
+BRH:16
+FNF:9
+FNH:9
+end_of_record
+SF:C:\Code\DotNetNinja.AutoBoundConfiguration\src\DotNetNinja.AutoBoundConfiguration\AutoBoundConfigurationProvider.cs
+FN:17,System.Collections.Generic.Dictionary`2<System.Type,System.Object> DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::get_Registrations()
+FNDA:55,System.Collections.Generic.Dictionary`2<System.Type,System.Object> DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::get_Registrations()
+DA:18,55
+FN:21,TConfiguration DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::Get()
+FNDA:6,TConfiguration DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::Get()
+DA:22,6
+DA:24,1
+DA:26,5
+BRDA:22,21,0,1
+BRDA:22,21,1,5
+FN:30,System.Boolean DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::Contains()
+FNDA:9,System.Boolean DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::Contains()
+DA:31,9
+DA:32,9
+FN:38,System.Void DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::Add(System.Type,TConfiguration)
+FNDA:26,System.Void DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::Add(System.Type,TConfiguration)
+DA:39,26
+DA:41,1
+DA:43,25
+DA:44,24
+BRDA:39,17,0,1
+BRDA:39,17,1,25
+FN:7,System.Void DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::.ctor()
+FNDA:26,System.Void DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::.ctor()
+DA:8,26
+DA:10,26
+DA:11,26
+FN:12,System.Void DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::.ctor(System.Collections.Generic.Dictionary`2<System.Type,System.Object>)
+FNDA:3,System.Void DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationProvider::.ctor(System.Collections.Generic.Dictionary`2<System.Type,System.Object>)
+DA:13,3
+DA:15,3
+DA:16,3
+BRDA:15,9,0,1
+BRDA:15,9,1,3
+LF:16
+LH:16
+BRF:6
+BRH:6
+FNF:6
+FNH:6
+end_of_record
+SF:C:\Code\DotNetNinja.AutoBoundConfiguration\src\DotNetNinja.AutoBoundConfiguration\IServiceCollectionExtensions.cs
+FN:11,DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder DotNetNinja.AutoBoundConfiguration.IServiceCollectionExtensions::AddAutoBoundConfigurations(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+FNDA:2,DotNetNinja.AutoBoundConfiguration.AutoBoundConfigurationBuilder DotNetNinja.AutoBoundConfiguration.IServiceCollectionExtensions::AddAutoBoundConfigurations(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)
+DA:12,2
+LF:1
+LH:1
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
