@@ -1,10 +1,8 @@
 # DotNetNinja.AutoBoundConfiguration
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DotNet-Ninja/DotNetNinja.AutoBoundConfiguration/.NET?logo=github)](https://github.com/DotNet-Ninja/DotNetNinja.AutoBoundConfiguration/actions/workflows/continuous.integration.yml)
+[![Codacy grade](https://img.shields.io/codacy/grade/1b80f1f07f5e4dbba61b9e426ced0b10?label=Codacy%20Quality&logo=codacy)](https://app.codacy.com/gh/DotNet-Ninja/DotNetNinja.AutoBoundConfiguration/dashboard)
 
 Library to simplify the binding of classes to configuration sections in .Net Core applications.
-
-## Build Status
-
-[![Build status](https://dev.azure.com/chaosmonkey/DotNetNinja.AutoBoundConfiguration/_apis/build/status/DotNetNinja.AutoBoundConfiguration-ASP.NET%20Core-CI)](https://dev.azure.com/chaosmonkey/DotNetNinja.AutoBoundConfiguration/_build/latest?definitionId=25)
 
 ## How to Get Started
 For infomation on using the DotNetNinja.AutoBoundConfiguration package please check out our [Getting Started Page](https://github.com/DotNet-Ninja/DotNetNinja.AutoBoundConfiguration/wiki/Getting-Started).
