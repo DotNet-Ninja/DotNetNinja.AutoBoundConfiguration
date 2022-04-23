@@ -37,4 +37,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: DotNetNinja.AutoBoundConfiguration
-        path: /home/runner/**/DotNetNinja.AutoBoundConfiguration/bin/release/*.nupkg
+        path: /home/runner/**/DotNetNinja.AutoBoundConfiguration/bin/Release/*.nupkg
