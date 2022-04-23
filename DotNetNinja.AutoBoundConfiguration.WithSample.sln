@@ -1,21 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02309305-FBAA-4B6B-BF41-2964C48AE14B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration", "src\DotNetNinja.AutoBoundConfiguration\DotNetNinja.AutoBoundConfiguration.csproj", "{2E4CA2CF-5E5B-4D9D-8885-74B215D85806}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNinja.AutoBoundConfiguration", "src\DotNetNinja.AutoBoundConfiguration\DotNetNinja.AutoBoundConfiguration.csproj", "{2E4CA2CF-5E5B-4D9D-8885-74B215D85806}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApplication", "src\SampleApplication\SampleApplication.csproj", "{1DFE23CB-20B5-47C6-B8B2-1FBF1B5F58D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApplication", "src\SampleApplication\SampleApplication.csproj", "{1DFE23CB-20B5-47C6-B8B2-1FBF1B5F58D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2FF85602-5E9E-4041-B6EF-268CCF5DC555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration.Tests", "tests\DotNetNinja.AutoBoundConfiguration.Tests\DotNetNinja.AutoBoundConfiguration.Tests.csproj", "{5EF1AEC9-42DE-489E-9836-982C10807698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNinja.AutoBoundConfiguration.Tests", "tests\DotNetNinja.AutoBoundConfiguration.Tests\DotNetNinja.AutoBoundConfiguration.Tests.csproj", "{5EF1AEC9-42DE-489E-9836-982C10807698}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly\DotNetNinja.AutoBoundConfiguration.TestAssembly.csproj", "{DF55F835-B28C-4098-B74B-0228C1836268}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly\DotNetNinja.AutoBoundConfiguration.TestAssembly.csproj", "{DF55F835-B28C-4098-B74B-0228C1836268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly2", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly2\DotNetNinja.AutoBoundConfiguration.TestAssembly2.csproj", "{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly2", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly2\DotNetNinja.AutoBoundConfiguration.TestAssembly2.csproj", "{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{37A5EBEE-FCE4-475D-A32A-ABD692C043D3}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\bump-semantic-version.yml = .github\workflows\bump-semantic-version.yml
+		.github\workflows\continuous-integration.yml = .github\workflows\continuous-integration.yml
+		.github\workflows\pull-request-integration-build.yml = .github\workflows\pull-request-integration-build.yml
+		.github\workflows\validate-semantic-version.yml = .github\workflows\validate-semantic-version.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,9 +33,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2E4CA2CF-5E5B-4D9D-8885-74B215D85806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -91,11 +96,17 @@ Global
 		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Release|x86.ActiveCfg = Release|Any CPU
 		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2E4CA2CF-5E5B-4D9D-8885-74B215D85806} = {02309305-FBAA-4B6B-BF41-2964C48AE14B}
 		{1DFE23CB-20B5-47C6-B8B2-1FBF1B5F58D1} = {02309305-FBAA-4B6B-BF41-2964C48AE14B}
 		{5EF1AEC9-42DE-489E-9836-982C10807698} = {2FF85602-5E9E-4041-B6EF-268CCF5DC555}
 		{DF55F835-B28C-4098-B74B-0228C1836268} = {2FF85602-5E9E-4041-B6EF-268CCF5DC555}
 		{F15AAD69-AD3F-4F6C-BB5F-D5D34D649DA6} = {2FF85602-5E9E-4041-B6EF-268CCF5DC555}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {832576C4-4159-42C3-89CC-2FFB26EAAEBE}
 	EndGlobalSection
 EndGlobal
