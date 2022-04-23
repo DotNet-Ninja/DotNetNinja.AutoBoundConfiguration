@@ -1,19 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{919AE829-7558-4063-8676-19EE48FAB40D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration", "src\DotNetNinja.AutoBoundConfiguration\DotNetNinja.AutoBoundConfiguration.csproj", "{77137298-5816-479F-87E7-E677916AA7E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNinja.AutoBoundConfiguration", "src\DotNetNinja.AutoBoundConfiguration\DotNetNinja.AutoBoundConfiguration.csproj", "{77137298-5816-479F-87E7-E677916AA7E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DD221DAF-2BFF-4196-A09F-01AD964E25EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration.Tests", "tests\DotNetNinja.AutoBoundConfiguration.Tests\DotNetNinja.AutoBoundConfiguration.Tests.csproj", "{E659BABD-D375-426A-8BF6-AB79CC84E764}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNinja.AutoBoundConfiguration.Tests", "tests\DotNetNinja.AutoBoundConfiguration.Tests\DotNetNinja.AutoBoundConfiguration.Tests.csproj", "{E659BABD-D375-426A-8BF6-AB79CC84E764}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly\DotNetNinja.AutoBoundConfiguration.TestAssembly.csproj", "{A0969689-BE22-4EC2-987E-3BEE342E41C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly\DotNetNinja.AutoBoundConfiguration.TestAssembly.csproj", "{A0969689-BE22-4EC2-987E-3BEE342E41C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly2", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly2\DotNetNinja.AutoBoundConfiguration.TestAssembly2.csproj", "{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetNinja.AutoBoundConfiguration.TestAssembly2", "tests\DotNetNinja.AutoBoundConfiguration.TestAssembly2\DotNetNinja.AutoBoundConfiguration.TestAssembly2.csproj", "{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{FACF7CEB-ECAD-4C10-9E60-2B2C94E55201}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\bump-semantic-version.yml = .github\workflows\bump-semantic-version.yml
+		.github\workflows\continuous-integration.yml = .github\workflows\continuous-integration.yml
+		.github\workflows\pull-request-integration-build.yml = .github\workflows\pull-request-integration-build.yml
+		.github\workflows\validate-semantic-version.yml = .github\workflows\validate-semantic-version.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{77137298-5816-479F-87E7-E677916AA7E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -77,10 +82,16 @@ Global
 		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Release|x86.ActiveCfg = Release|Any CPU
 		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{77137298-5816-479F-87E7-E677916AA7E5} = {919AE829-7558-4063-8676-19EE48FAB40D}
 		{E659BABD-D375-426A-8BF6-AB79CC84E764} = {DD221DAF-2BFF-4196-A09F-01AD964E25EC}
 		{A0969689-BE22-4EC2-987E-3BEE342E41C3} = {DD221DAF-2BFF-4196-A09F-01AD964E25EC}
 		{8F431BB2-1F67-44C1-BD29-BC7639ACBA25} = {DD221DAF-2BFF-4196-A09F-01AD964E25EC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B71C9FC-1017-4D6E-85FE-28990E35118B}
 	EndGlobalSection
 EndGlobal

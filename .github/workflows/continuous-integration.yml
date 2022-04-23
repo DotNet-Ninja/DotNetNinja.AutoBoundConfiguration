@@ -29,8 +29,13 @@ jobs:
       run: dotnet restore ./DotNetNinja.AutoBoundConfiguration.sln
     - name: Build
       run: dotnet build ./DotNetNinja.AutoBoundConfiguration.sln -c Release --no-restore -p:Version=${{ steps.currenttag.outputs.tag }}
-    - name: Test
-      run: dotnet test ./DotNetNinja.AutoBoundConfiguration.sln -c Release --no-build --verbosity normal
+    - name: Execute Tests & Collect Coverage
+      run: dotnet test  ./DotNetNinja.AutoBoundConfiguration.sln -c Release /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./coverage/lcov.info --no-build
+    - name: Publish to Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+          path-to-lcov: tests/DotNetNinja.AutoBoundConfiguration.Tests/coverage/lcov.info
+          github-token: ${{ secrets.GITHUB_TOKEN }}  
     - name: Package Artifacts
       run: dotnet pack ./src/DotNetNinja.AutoBoundConfiguration/DotNetNinja.AutoBoundConfiguration.csproj -p:PackageVersion=${{ steps.currenttag.outputs.tag }} -p:Version=${{ steps.currenttag.outputs.tag }} -c Release 
     - name: Publish Artifact
