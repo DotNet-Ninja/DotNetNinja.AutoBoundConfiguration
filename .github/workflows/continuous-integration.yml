@@ -36,3 +36,4 @@ jobs:
       with:
         name: DotNetNinja.AutoBoundConfiguration
         path: ./src/DotNetNinja.AutoBoundConfiguration/bin/release/*.nupkg
+        
