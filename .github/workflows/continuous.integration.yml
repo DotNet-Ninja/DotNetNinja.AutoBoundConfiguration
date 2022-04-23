@@ -19,8 +19,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./DotNetNinja.AutoBoundConfiguration.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build ./DotNetNinja.AutoBoundConfiguration.sln --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ./DotNetNinja.AutoBoundConfiguration.sln --no-build --verbosity normal
