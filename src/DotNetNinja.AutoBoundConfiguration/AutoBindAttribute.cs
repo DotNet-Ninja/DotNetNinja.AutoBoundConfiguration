@@ -4,7 +4,11 @@ namespace DotNetNinja.AutoBoundConfiguration
 {
     public class AutoBindAttribute: Attribute
     {
-        public AutoBindAttribute(string section=null)
+        public AutoBindAttribute()
+        {
+        }
+
+        public AutoBindAttribute(string section)
         {
             Section = section;
         }

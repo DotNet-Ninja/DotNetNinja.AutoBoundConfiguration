@@ -19,7 +19,7 @@ namespace DotNetNinja.AutoBoundConfiguration.Tests
             _mocks?.Dispose();
         }
 
-        private readonly AutoMock _mocks = null;
+        private readonly AutoMock _mocks;
         private readonly IConfiguration _configuration;
 
         [Fact]

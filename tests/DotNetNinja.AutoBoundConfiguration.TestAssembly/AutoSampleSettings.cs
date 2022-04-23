@@ -2,7 +2,7 @@
 
 namespace DotNetNinja.AutoBoundConfiguration.TestAssembly
 {
-    [AutoBind()]
+    [AutoBind]
     [ExcludeFromCodeCoverage]
     public class AutoSampleSettings
     {
