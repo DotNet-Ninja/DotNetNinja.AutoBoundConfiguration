@@ -1,12 +1,12 @@
-name: Pull Request Integration Build
+name: Pull-Request-Integration-Build
 on:
   pull_request:
     branches: 
       - master
 
 jobs:
-  build:
-
+  pull-request-integration-build:
+    name: Pull Request Integration Build
     runs-on: ubuntu-latest
 
     steps:
