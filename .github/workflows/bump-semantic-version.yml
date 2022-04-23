@@ -1,17 +1,18 @@
-name: Release Info
+name: Bump Semantic Version
 on:
-  pull_request:
-    types: [labeled, unlabeled, opened, edited, reopened, synchronize, ready_for_review]
+  push:
+    branches:
+      - master
 jobs:
-  check-pr:
-    name: Validate Release Label and Notes
+  bump-tag-version:
+    name: Bump and Tag Version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: jefflinse/pr-semver-bump@v1
-        name: Validate Pull Request Metadata
+        name: Bump and Tag Version
         with:
-          mode: validate
+          mode: bump
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           major-label: major release
           minor-label: minor release
