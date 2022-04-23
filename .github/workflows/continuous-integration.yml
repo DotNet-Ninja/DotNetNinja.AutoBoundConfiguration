@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Required due to the way Git works, without it this action won't be able to find any or the correct tags
     - name: 'Get Current tag'
       id: currenttag
       uses: "WyriHaximus/github-action-get-previous-tag@v1"
@@ -35,5 +37,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: DotNetNinja.AutoBoundConfiguration
-        path: ./src/DotNetNinja.AutoBoundConfiguration/bin/release/*.nupkg
-        
+        path: /home/runner/**/DotNetNinja.AutoBoundConfiguration/bin/release/*.nupkg
