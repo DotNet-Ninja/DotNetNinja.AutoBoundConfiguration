@@ -1,9 +1,9 @@
-name: Validate Semantic Version
+name: Validate-Semantic-Version
 on:
   pull_request:
     types: [labeled, unlabeled, opened, edited, reopened, synchronize, ready_for_review]
 jobs:
-  check-pr:
+  validate-semantic-version:
     name: Validate Release Label and Notes
     runs-on: ubuntu-latest
     steps:

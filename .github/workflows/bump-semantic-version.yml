@@ -1,4 +1,4 @@
-name: Bump Semantic Version
+name: Bump-Semantic-Version
 on:
   push:
     branches:
