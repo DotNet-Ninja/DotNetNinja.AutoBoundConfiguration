@@ -34,7 +34,6 @@ jobs:
     - name: Package Artifacts
       run: dotnet pack ./src/DotNetNinja.AutoBoundConfiguration/DotNetNinja.AutoBoundConfiguration.csproj -p:PackageVersion=${{ steps.currenttag.outputs.tag }} -c Release 
     - name: Publish Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: DotNetNinja.AutoBoundConfiguration
-        path: /home/runner/**/DotNetNinja.AutoBoundConfiguration/bin/Release/*.nupkg
+      run: |
+          dotnet nuget add source --username DotNet-Ninja --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/DotNet-Ninja/index.json"
+          dotnet nuget push "./src/DotNetNinja.AutoBoundConfiguration/bin/Release/DotNetNinja.AutoBoundConfiguration.${{ steps.currenttag.outputs.tag }}.nupkg"  --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
