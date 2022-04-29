@@ -1,9 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DotNetNinja.AutoBoundConfiguration
 {
@@ -15,7 +15,7 @@ namespace DotNetNinja.AutoBoundConfiguration
             Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _provider = new AutoBoundConfigurationProvider();
         }
-        
+
         private readonly AutoBoundConfigurationProvider _provider;
 
         public IServiceCollection Services { get; }
@@ -30,9 +30,15 @@ namespace DotNetNinja.AutoBoundConfiguration
             return this;
         }
 
+        public AutoBoundConfigurationBuilder FromAssemblyOf<T>()
+        {
+            return FromAssembly(typeof(T).Assembly);
+        }
+
         private void AddFromAssembly(Assembly assembly)
         {
-            var types = assembly.GetTypes().Where(type => type.GetCustomAttribute<AutoBindAttribute>() != null && type.IsPublic);
+            var types = assembly.GetTypes()
+                .Where(type => type.GetCustomAttribute<AutoBindAttribute>() != null && type.IsPublic);
             foreach (var type in types)
             {
                 For(type);
@@ -41,29 +47,34 @@ namespace DotNetNinja.AutoBoundConfiguration
 
         public AutoBoundConfigurationBuilder FromAssemblies(IEnumerable<Assembly> assemblies)
         {
-            foreach(var assembly in assemblies)
+            foreach (var assembly in assemblies)
             {
                 AddFromAssembly(assembly);
             }
+
             return this;
         }
 
-        public AutoBoundConfigurationBuilder For<T>() where T: class, new()
+        public AutoBoundConfigurationBuilder For<T>() where T : class, new()
         {
-            return For(typeof(T)) ;
+            return For(typeof(T));
         }
 
         public AutoBoundConfigurationBuilder For(Type t)
         {
-            if(t.GetConstructor(Type.EmptyTypes) == null)
+            if (t.GetConstructor(Type.EmptyTypes) == null)
             {
-                throw new InvalidOperationException($"Type '{t.Name}' cannot be used with AutoBoundConfiguration because it does not have a parameter-less constructor.");
+                throw new InvalidOperationException(
+                    $"Type '{t.Name}' cannot be used with AutoBoundConfiguration because it does not have a parameter-less constructor.");
             }
+
             var attribute = t.GetCustomAttribute<AutoBindAttribute>();
             if (attribute == null)
             {
-                throw new InvalidOperationException($"Type '{t.Name}' cannot be used with AutoBoundConfiguration because it does not have a AutoBind attribute.");
+                throw new InvalidOperationException(
+                    $"Type '{t.Name}' cannot be used with AutoBoundConfiguration because it does not have a AutoBind attribute.");
             }
+
             var section = attribute.Section ?? t.Name;
             var instance = Convert.ChangeType(Activator.CreateInstance(t), t);
             Configuration.Bind(section, instance);
