@@ -327,5 +327,42 @@ namespace DotNetNinja.AutoBoundConfiguration.Tests
             Assert.Contains(builder.Services, service => service.Lifetime == ServiceLifetime.Singleton
                                                          && service.ServiceType == typeof(AnotherSettings));
         }
+
+        [Fact]
+        public void FromAssemblyOf_ShouldAddAllTypesMarkedWithAutoBindToProvider()
+        {
+            using var mockRepository = AutoMock
+                .GetLoose(c =>
+                    c.RegisterInstance(new ConfigurationRoot(new List<IConfigurationProvider>()))
+                        .AsImplementedInterfaces());
+            var builder = mockRepository.Create<AutoBoundConfigurationBuilder>();
+
+            builder.FromAssemblyOf<SampleSettings>();
+
+            Assert.True(builder.Provider.Contains<SampleSettings>(),
+                "Expected type 'SampleSettings' was not found in the registrations of the provider.");
+            Assert.True(builder.Provider.Contains<OtherSettings>(),
+                "Expected type 'OtherSettings' was not found in the registrations of the provider.");
+        }
+
+        [Fact]
+        public void FromAssemblyOf_ShouldAddAllTypesMarkedWithAutoBindToServicesWithSingletonLifetimeScope()
+        {
+            using var mockRepository = AutoMock
+                .GetLoose(c =>
+                {
+                    c.RegisterInstance(new ConfigurationRoot(new List<IConfigurationProvider>()))
+                        .AsImplementedInterfaces();
+                    c.RegisterInstance(new ServiceCollection()).AsImplementedInterfaces();
+                });
+            var builder = mockRepository.Create<AutoBoundConfigurationBuilder>();
+
+            builder.FromAssemblyOf<SampleSettings>();
+
+            Assert.Contains(builder.Services, service => service.Lifetime == ServiceLifetime.Singleton
+                                                         && service.ServiceType == typeof(SampleSettings));
+            Assert.Contains(builder.Services, service => service.Lifetime == ServiceLifetime.Singleton
+                                                         && service.ServiceType == typeof(OtherSettings));
+        }
     }
 }
